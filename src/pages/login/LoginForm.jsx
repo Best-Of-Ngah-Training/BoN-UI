@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { useLoginForm } from "../../zod/validation/useLoginForm";
+import { useLoginForm } from "../../zod/validation/useLoginForm.js";
 import { EyeInvisibleOutlined, EyeOutlined } from "@ant-design/icons";
-import { LoginSchema } from "../../zod/schema/loginSchema";
+import { LoginSchema } from "../../zod/schema/loginSchema.js";
 import { Link } from "react-router-dom";
 
 const LoginForm = () => {

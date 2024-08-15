@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import GoogleAuth from "../../Components/GoogleAuth";
-import SingUp from "../Register/RegisterForm";
+import { useState } from "react";
+import GoogleAuth from "../../Components/GoogleAuth.jsx";
+import SingUp from "../Register/RegisterForm.jsx";
 
 const Register = () => {
-  const [user, setUser] = useState(null);
+  const [, setUser] = useState(null);
 
   return (
     <section className="flex flex-row w-full h-[100vh] bg-firstColor text-white">

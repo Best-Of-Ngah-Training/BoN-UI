@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
-import { useLoginForm } from "../../zod/validation/useLoginForm";
-import { signInSchema } from "../../zod/schema/signInSchema";
+import { useLoginForm } from "../../zod/validation/useLoginForm.js";
+import { signInSchema } from "../../zod/schema/signInSchema.js";
 import { Link } from "react-router-dom";
-import { PasswordInput } from "../../Components/PasswordInput";
+import { PasswordInput } from "../../Components/PasswordInput.jsx";
 
 const SignUp = () => {
   const {

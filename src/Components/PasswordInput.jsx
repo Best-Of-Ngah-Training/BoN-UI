@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
 import { EyeInvisibleOutlined, EyeOutlined } from "@ant-design/icons";
-import { PasswordInputError } from "./PasswordInputError";
+import { PasswordInputError } from "./PasswordInputError.jsx";
 
 export const PasswordInput = ({ register, name, error, placeholder }) => {
   const [showPassword, setShowPassword] = useState(false);

@@ -2,10 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import Login from "./pages/login/Login";
-import Register from "./pages/Register/Register";
-import ResponsiveAppBar from "./pages/LandingPage/landingPage";
+import Login from "./pages/login/Login.jsx";
+import Register from "./pages/Register/Register.jsx";
 import { GoogleOAuthProvider } from "@react-oauth/google";
+import ProfilePage from "./pages/Profile/Profile.jsx";
+import Home from "./pages/LandingPage/LandingPageSection.jsx";
 
 const ROUTER = createBrowserRouter([
   {
@@ -18,13 +19,17 @@ const ROUTER = createBrowserRouter([
   },
   {
     path: "/home",
-    element: <ResponsiveAppBar />,
+    element: <Home />,
+  },
+  {
+    path: "/home/profile",
+    element: <ProfilePage />,
   },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <GoogleOAuthProvider clientId="878036846411-t3305i1ulmpr26e1dfdvof7esr5gbfbl.apps.googleusercontent.com">
+    <GoogleOAuthProvider clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}>
       <RouterProvider router={ROUTER} />
     </GoogleOAuthProvider>
   </React.StrictMode>

@@ -18,8 +18,11 @@ const GoogleAuth = ({ setUser }) => {
             headers: { Authorization: `Bearer ${response.access_token}` },
           }
         );
-        setUser(res.data);
-        navigate("/home"); // Redirection après succès
+        const userData = res.data;
+        setUser(userData);
+        // Stocker les données de l'utilisateur dans localStorage
+        localStorage.setItem("user", JSON.stringify(userData));
+        navigate("/home");
       } catch (err) {
         console.error(err);
       } finally {

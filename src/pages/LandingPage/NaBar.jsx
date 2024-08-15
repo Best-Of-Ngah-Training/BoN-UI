@@ -21,6 +21,15 @@ const ResponsiveAppBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
   const navigate = useNavigate();
+  const [user, setUser] = React.useState(null);
+
+  React.useEffect(() => {
+    // Récupérer les données de l'utilisateur depuis localStorage au chargement du composant
+    const storedUser = localStorage.getItem("user");
+    if (storedUser) {
+      setUser(JSON.parse(storedUser));
+    }
+  }, []);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -39,6 +48,7 @@ const ResponsiveAppBar = () => {
 
   const handleMenuItemClick = (setting) => {
     if (setting === "Logout") {
+      localStorage.removeItem("user");
       navigate("/");
     }
     handleCloseUserMenu();
@@ -50,6 +60,7 @@ const ResponsiveAppBar = () => {
         <Toolbar disableGutters>
           <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
           <Typography
+            onClick={navigate("/")}
             variant="h6"
             noWrap
             component="a"
@@ -137,7 +148,11 @@ const ResponsiveAppBar = () => {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                {user ? (
+                  <Avatar alt="Remy Sharp" src={user.picture} />
+                ) : (
+                  <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                )}
               </IconButton>
             </Tooltip>
             <Menu

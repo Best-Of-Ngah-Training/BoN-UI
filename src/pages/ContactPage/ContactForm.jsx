@@ -30,9 +30,15 @@ const ContactForm = () => {
           response.status,
           response.text
         );
+        alert("Email envoyé avec succès!");
+        setLastName("");
+        setFirstName("");
+        setEmail("");
+        setMessage("");
       },
       (err) => {
         console.error("Échec de l'envoi de l'email:", err);
+        alert("Échec de l'envoi de l'email. Veuillez réessayer.");
       }
     );
   };

@@ -13,6 +13,7 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import { Link, useNavigate } from "react-router-dom";
+import { PALETTE_COLORS } from "../../constants/palete.js";
 
 const pages = ["Products", "Pricing", "Contact"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
@@ -59,13 +60,18 @@ const ResponsiveAppBar = () => {
       navigate("/");
     } else if (setting === "Profile") {
       navigate("/home/profile");
+    } else if (setting === "Dashboard") {
+      navigate("/home/dashboard");
     }
 
     handleCloseUserMenu();
   };
 
   return (
-    <AppBar position="static">
+    <AppBar
+      position="static"
+      sx={{ backgroundColor: PALETTE_COLORS.firstColor }}
+    >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
@@ -73,8 +79,6 @@ const ResponsiveAppBar = () => {
             <Typography
               variant="h6"
               noWrap
-              component="a"
-              href="#app-bar-with-responsive-menu"
               sx={{
                 mr: 2,
                 display: { xs: "none", md: "flex" },
@@ -130,8 +134,6 @@ const ResponsiveAppBar = () => {
             onClick={() => navigate("/home")}
             variant="h5"
             noWrap
-            component="a"
-            href="#app-bar-with-responsive-menu"
             sx={{
               mr: 2,
               display: { xs: "flex", md: "none" },

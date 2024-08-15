@@ -1,19 +1,16 @@
-import { useState } from "react";
+import AnimateText from "../../Styles/TextAnimation/animateText.jsx";
 import LoginForm from "./LoginForm.jsx";
-import GoogleAuth from "./GoogleAuth.jsx";
 
 const Login = () => {
-  const [, setUser] = useState(null);
-
   return (
-    <section className="flex flex-row w-full h-[100vh] bg-firstColor text-white">
-      <div className="flex flex-col justify-center border border-white w-[50%]">
-        <p className="text-center">
-          <GoogleAuth setUser={setUser} />
-        </p>
-      </div>
-      <div className="flex flex-col justify-center w-[50%]">
-        <LoginForm />
+    <section className=" bg-loginbg bg-cover w-full h-[100vh] bg-firstColor text-white">
+      <div className="w-full flex flex-row h-full bg-firstLowOpacity">
+        <div className="flex flex-col justify-center max-md:hidden  w-[50%]">
+          <AnimateText />
+        </div>
+        <div className="flex flex-col justify-center max-md:w-[100%]   w-[50%]">
+          <LoginForm />
+        </div>
       </div>
     </section>
   );

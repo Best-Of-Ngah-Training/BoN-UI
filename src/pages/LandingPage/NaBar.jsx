@@ -51,6 +51,10 @@ const ResponsiveAppBar = () => {
       localStorage.removeItem("user");
       navigate("/");
     }
+
+    if (setting === "Dashboard") {
+      navigate("/home/dashboard");
+    }
     handleCloseUserMenu();
   };
 

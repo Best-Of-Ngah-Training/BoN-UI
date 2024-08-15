@@ -1,4 +1,4 @@
-/* eslint-disable react/prop-types */
+import PropTypes from "prop-types";
 export const PasswordInputError = ({ error }) => {
   if (!error) return null;
 
@@ -7,4 +7,10 @@ export const PasswordInputError = ({ error }) => {
       <p className="text-red-500 text-sm leading-none">{error.message}</p>
     </div>
   );
+};
+
+PasswordInputError.propTypes = {
+  error: PropTypes.shape({
+    message: PropTypes.string.isRequired,
+  }),
 };

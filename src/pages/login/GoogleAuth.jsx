@@ -32,7 +32,10 @@ const GoogleAuth = ({ setUser }) => {
   });
 
   return (
-    <button onClick={() => login()} className="border border-black p-5">
+    <button
+      onClick={() => login()}
+      className="border rounded-2xl w-[94%] mx-auto p-3 bg-firstColor hover-custom-form"
+    >
       {loading ? "Connecting..." : "Se connecter avec Google"}
     </button>
   );

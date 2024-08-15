@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { useLoginForm } from "../../zod/validation/useLoginForm.js";
 import { signInSchema } from "../../zod/schema/signInSchema.js";
 import { Link } from "react-router-dom";

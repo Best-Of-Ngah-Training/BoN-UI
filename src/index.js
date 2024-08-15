@@ -8,6 +8,7 @@ import { GoogleOAuthProvider } from "@react-oauth/google";
 import ProfilePage from "./pages/Profile/Profile.jsx";
 import Home from "./pages/LandingPage/LandingPageSection.jsx";
 import ContactPage from "./pages/ContactPage/ContactPage.jsx";
+import Dashboard from "./pages/dashboard/Dashboard.jsx";
 
 const ROUTER = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ const ROUTER = createBrowserRouter([
   {
     path: "/home/contact",
     element: <ContactPage />,
+  },
+  {
+    path: "/home/dashboard",
+    element: <Dashboard />,
   },
 ]);
 

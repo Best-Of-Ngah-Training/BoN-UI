@@ -1,5 +1,5 @@
-import LandingComponent from "../../Components/Landing.jsx";
 import Layout from "../../Layout/Layout.jsx";
+import LandingComponent from "./Landing.jsx";
 
 const Home = () => {
   return (

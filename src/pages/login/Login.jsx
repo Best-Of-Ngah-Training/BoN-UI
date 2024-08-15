@@ -1,6 +1,6 @@
 import { useState } from "react";
-import GoogleAuth from "../../Components/GoogleAuth.jsx";
 import LoginForm from "./LoginForm.jsx";
+import GoogleAuth from "./GoogleAuth.jsx";
 
 const Login = () => {
   const [, setUser] = useState(null);

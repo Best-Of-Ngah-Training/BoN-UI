@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 
-import ResponsiveAppBar from "../Components/NaBar.jsx";
+import ResponsiveAppBar from "../pages/NavBar/NaBar.jsx";
 
 const Layout = ({ children }) => {
   return (

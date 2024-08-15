@@ -1,6 +1,6 @@
 import { useState } from "react";
-import GoogleAuth from "../../Components/GoogleAuth.jsx";
-import SingUp from "../Register/RegisterForm.jsx";
+import SignUp from "./RegisterForm.jsx";
+import GoogleAuth from "../login/GoogleAuth.jsx";
 
 const Register = () => {
   const [, setUser] = useState(null);
@@ -13,7 +13,7 @@ const Register = () => {
         </p>
       </div>
       <div className="flex flex-col justify-center w-[50%]">
-        <SingUp />
+        <SignUp />
       </div>
     </section>
   );

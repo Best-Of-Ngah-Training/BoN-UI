@@ -2,7 +2,7 @@
 import { useLoginForm } from "../../zod/validation/useLoginForm.js";
 import { signInSchema } from "../../zod/schema/signInSchema.js";
 import { Link } from "react-router-dom";
-import { PasswordInput } from "../../Components/PasswordInput.jsx";
+import { PasswordInput } from "../login/PasswordInput.jsx";
 
 const SignUp = () => {
   const {

@@ -7,6 +7,7 @@ import Register from "./pages/Register/Register.jsx";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import ProfilePage from "./pages/Profile/Profile.jsx";
 import Home from "./pages/LandingPage/LandingPageSection.jsx";
+import ContactPage from "./pages/ContactPage/ContactPage.jsx";
 
 const ROUTER = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ const ROUTER = createBrowserRouter([
   {
     path: "/home/profile",
     element: <ProfilePage />,
+  },
+  {
+    path: "/home/contact",
+    element: <ContactPage />,
   },
 ]);
 

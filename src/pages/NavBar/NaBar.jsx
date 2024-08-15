@@ -14,7 +14,7 @@ import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import { Link, useNavigate } from "react-router-dom";
 
-const pages = ["Products", "Pricing", "Blog"];
+const pages = ["Products", "Pricing", "Contact"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 const ResponsiveAppBar = () => {
@@ -46,6 +46,13 @@ const ResponsiveAppBar = () => {
     setAnchorElUser(null);
   };
 
+  const handlePageItemClick = (pages) => {
+    if (pages == "Contact") {
+      navigate("/home/contact");
+    }
+    handleCloseNavMenu();
+  };
+
   const handleMenuItemClick = (setting) => {
     if (setting === "Logout") {
       localStorage.removeItem("user");
@@ -53,6 +60,7 @@ const ResponsiveAppBar = () => {
     } else if (setting === "Profile") {
       navigate("/home/profile");
     }
+
     handleCloseUserMenu();
   };
 
@@ -111,7 +119,7 @@ const ResponsiveAppBar = () => {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                <MenuItem key={page} onClick={() => handlePageItemClick(page)}>
                   <Typography textAlign="center">{page}</Typography>
                 </MenuItem>
               ))}
@@ -119,6 +127,7 @@ const ResponsiveAppBar = () => {
           </Box>
           <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
           <Typography
+            onClick={() => navigate("/home")}
             variant="h5"
             noWrap
             component="a"
@@ -140,7 +149,7 @@ const ResponsiveAppBar = () => {
             {pages.map((page) => (
               <Button
                 key={page}
-                onClick={handleCloseNavMenu}
+                onClick={() => handlePageItemClick(page)}
                 sx={{ my: 2, color: "white", display: "block" }}
               >
                 {page}
